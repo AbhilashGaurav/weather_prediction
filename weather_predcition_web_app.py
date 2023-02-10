@@ -8,12 +8,13 @@ with open ('style.css') as f:
 
 loaded_model = pickle.load(open('trained_model_weather_predict.sav', 'rb')) # read binary  rb
 # creating a function
-def add_bg_from_url():
+image1 = "https://qph.fs.quoracdn.net/main-qimg-0c818b49cc2aeff5207add0d992d107f"
+def add_bg_from_url(image1):
     st.markdown(
          f"""
          <style>
          .stApp {{
-             background-image: url("https://qph.fs.quoracdn.net/main-qimg-9dc5f9eeb7965c3176a21690d284ab3e");
+             background-image: url(""" + image1 + """); # bg
              background-attachment: fixed;
              background-size: cover
          }}
@@ -23,7 +24,7 @@ def add_bg_from_url():
      )
 
 
-add_bg_from_url()
+add_bg_from_url(image1)
 def weather(input_data):
     input_data_asnumpy = np.asarray(input_data)
 
@@ -34,21 +35,27 @@ def weather(input_data):
     # print(prediction)
     # st.image('demo_img.jpg')
     if (prediction[0]=='rain'):
+      add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-b30c852193758aa7c610d46ebb12e8e9") #rain 
       st.metric("Prediction","🌧","RAIN")
       # return("🌧Rain")
     elif (prediction[0]=='drizzle'):
+      add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-c6d657aa4a6e79e6c72e002af21588d2"); # dizzle
       st.metric("Prediction","🌦️","Drizzle")
       # return("Drizzle")
     elif (prediction[0]=='snow'):
+      add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-ce8e51d79c26fd4f33566fcf09bef9dd"); # dizzle
       st.snow()
       st.metric("Prediction","🥶","SNOW")
       # return("Snow🥶")
     elif (prediction[0]=='fog'):
+      add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-bf4d3fb5ec0e220423685a1b58900314"); # dizzle
       st.metric("Prediction","🌫️","FOG")
       # return("🌁Fog")
     elif (prediction[0]=='sun'):
+      add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-2016f298e7d48626cf591be438c7d37c"); # dizzle
       st.metric("Prediction","🌞","SUN")
       # return("🌞Sun")
+            
 
 def main():
     # giving the title 
