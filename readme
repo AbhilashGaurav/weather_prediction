@@ -1,5 +1,0 @@
-activate the env
-"activate"
-
-then use cmd
-"streamlit run webapp_name.py"
