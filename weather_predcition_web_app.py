@@ -14,11 +14,10 @@ def add_bg_from_url(image1):
     st.markdown(
          f"""
          <style>
-         .stApp {{
+         .stApp{{
              background-image: url(""" + image1 + """); # bg
              background-attachment: fixed;
-             background-size: cover
-         }}
+             background-size: cover}}
          </style>
          """,
          unsafe_allow_html=True
