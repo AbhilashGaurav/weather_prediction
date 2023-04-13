@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 # import sklearn as sklearn
 # import style.css
+
 with open ('style.css') as f:
 			st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
@@ -45,7 +46,7 @@ def weather(input_data):
       # return("Drizzle")
     elif (prediction[0]=='snow'):
       add_bg_from_url("https://qph.fs.quoracdn.net/main-qimg-ce8e51d79c26fd4f33566fcf09bef9dd"); # dizzle
-      st.snow()
+      # st.snow()   
       st.metric("Prediction","🥶","SNOW")
       # return("Snow🥶")
     elif (prediction[0]=='fog'):
