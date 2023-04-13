@@ -1,7 +1,7 @@
 import pickle
 import streamlit as st
 import numpy as np
-# import sklearn as sklearn
+import sklearn as sklearn
 # import style.css
 
 with open ('style.css') as f:
